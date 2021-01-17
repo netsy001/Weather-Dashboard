@@ -1,0 +1,21 @@
+#head {
+    background-color: grey;
+    font-size: medium;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: inherit;
+    text-align: center;
+    padding: 1rem;
+}
+.btn {
+        background: #2196F3;
+        color: white;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #0b7dda;
+      }
+      
