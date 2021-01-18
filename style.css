@@ -19,3 +19,7 @@
         background: #0b7dda;
       }
       
+#history {
+    overflow:scroll;
+    
+}

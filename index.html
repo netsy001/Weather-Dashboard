@@ -15,7 +15,7 @@
 <body>
 
     <header id="head" class="container">
-        <h1 class="head1">Weather API</h1>
+        <h1 class="head1">Weather-Dashboard</h1>
     </header>
 <br>
 <br>
@@ -23,12 +23,11 @@
     <div class="jumborton container">
         <form class="search">
             <label><b>City Name:</b></label>
-            <input type="text" placeholder="Name of the City!" name="search">
-            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+            <input type="text" placeholder="Name of the City!" name="search" id="cityName">  
+            <button type="submit" id="submitButton" class="btn"><i class="fa fa-search"></i></button>
           </form>
-
-          <div id="subject">
-
+          <div id="currentConditions">
+              Current Conditions:
           </div>
     </div>
 
