@@ -11,11 +11,21 @@ $(document).ready(function (){
             success: function(response){
                 console.log(response)
                 var currentWeather = show(response);
-                $("$currentConditions").html(currentWeather);
+                var d = new Date();
+                var localTime = d.getTime();
+                var localOffset = d.getTimezoneOffset();
+                var utc = localTime + localOffset;
+                var date = new Date + utc;
+
+                // show(response) = "<li>City Name: "+ inputValue + "</li>";
+                $("#currentConditions").append(currentWeather);
+                function show(response){
+                    return "<li>City Name: "+ inputValue + "</li>" +
+                $("#currentConditions").val(date);
+                }
+                            
             }
         });
     });
-            function show(response)
-                return "<li>City Name: + inputValue</li>" + 
             
 });
