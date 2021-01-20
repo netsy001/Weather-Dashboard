@@ -9,13 +9,14 @@ $(document).ready(function () {
             dataType: "jsonp",
             success: function (response) {
                 var d = moment(response.dt, 'X').utcOffset(response.timezone / 60).format('MMMM Do YYYY');
-                var currentWeather = show(response, inputValue);
+                var currentWeather = show(response, inputValue,d);
                 $("#currentConditions").append(currentWeather);
             }
         });
     });
-    function show(response,inputValue) {
+    function show(response,inputValue,d,urlName) {
         return "<li>City Name: " + inputValue + "</li>" +
-            "<li>Date: " + response.d + "</li>"; 
+            "<li>Date: " + d + "</li>"; 
     }
+    $('#wicon').attr('src', urlName);
 });
