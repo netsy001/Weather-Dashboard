@@ -10,13 +10,15 @@ $(document).ready(function () {
             success: function (response) {
                 var d = moment(response.dt, 'X').utcOffset(response.timezone / 60).format('MMMM Do YYYY');
                 var currentWeather = show(response, inputValue,d);
+                var iconcode = response.weather[0].icon;
+                var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
                 $("#currentConditions").append(currentWeather);
+                $('#wicon').attr('src', iconurl);
             }
         });
     });
-    function show(response,inputValue,d,urlName) {
+    function show(response,inputValue,d) {
         return "<li>City Name: " + inputValue + "</li>" +
             "<li>Date: " + d + "</li>"; 
     }
-    $('#wicon').attr('src', urlName);
 });
