@@ -13,7 +13,7 @@ $(document).ready(function () {
                 var iconcode = response.weather[0].icon;
                 var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
                 $("#currentConditions").append(currentWeather);
-                $('#wicon').attr('src', iconurl);
+                $('#wicon').attr("src", iconurl);
             }
         });
     });
@@ -21,4 +21,5 @@ $(document).ready(function () {
         return "<li>City Name: " + inputValue + "</li>" +
             "<li>Date: " + d + "</li>"; 
     }
+   
 });
