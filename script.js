@@ -43,13 +43,14 @@ $(document).ready(function () {
             dataType: "jsonp",
             cnt: "5",
             success: function (data) {
-                var fiveDayForcast = "";
-                console.log(data)
-                fiveDayForcast += "<h2>" + data.city.name + "</h2>"; // City (displays once)
+                var newArray = data.slice(0,5);
+                console.log(newArray)
+                fiveDayForcast += "<h2>" + data.city.name + "</h2>"; 
+                for (var i=0; i<data.length;i++)
                 $.each(data.list, function(index, val) {
                   fiveDayForcast += "<p>" // Opening paragraph tag
                   fiveDayForcast += "<b>Day " + index + "</b>: " // Day
-                  fiveDayForcast += val.main.temp + "&degC" // Temperature
+                  fiveDayForcast +=  "<b>Temp " + val.main.temp + "</b>: " // Temperature
                   fiveDayForcast += "<span> | " + val.weather[0].description + "</span>"; // Description
                   fiveDayForcast += "<img src='https://openweathermap.org/img/w/" + val.weather[0].icon + ".png'>" // Icon
                   fiveDayForcast += "</p>" // Closing paragraph tag
