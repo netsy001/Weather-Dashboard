@@ -23,3 +23,11 @@
     overflow:scroll;
     
 }
+#Next {
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-style: inherit;
+  background: limegreen;
+  text-align: center;
+}

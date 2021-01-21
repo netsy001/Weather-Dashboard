@@ -21,18 +21,29 @@
     </header>
     <br>
     <br>
-
-    <div class="jumborton container">
-        <form class="search">
-            <label><b>City Name:</b></label>
-            <input type="text" placeholder="Name of the City!" name="search" id="cityName">
-            <button type="submit" id="submitButton" class="btn"><i class="fa fa-search"></i></button>
-        </form>
-        <div id="currentConditions" class="icon">
-            Current Conditions:
-            <img id="wicon" src="" alt="Weather icon">
+    <div class="jumbotron container">
+        <div class="row">
+            <div class="col-sm-4">
+                <form class="search">
+                    <label><b>City Name:</b></label>
+                    <input type="text" placeholder="Name of the City!" name="search" id="cityName">
+                    <button type="submit" id="submitButton" class="btn"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div id="currentConditions" class="col-sm-8">
+                Current Conditions:
+                <img class="icon" id="wicon" src="">
+            </div>
+        </div>
+        <br>
+        <H2 id="Next">Weather Conditions for the next five days:</H2>
+        <div class="row">
+            <div class="col-sm-2.4" id="futureConditions">
+                <img class="icon" id="wicon" src="">
+            </div>
         </div>
     </div>
+
 
 
 
