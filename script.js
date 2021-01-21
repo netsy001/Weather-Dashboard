@@ -25,7 +25,15 @@ $(document).ready(function () {
                     dataType: "json",
                 }).then(function (result) {
                     var uvindex = result.value;
-                    $("#currentConditions").append("UV Index: " + uvindex);
+                    if (result.value <= 2) {
+                        $(".uvI").html("UV Index: " + uvindex).css('color', 'orange');
+                    }
+                    else if (result.value > 2 && result.value <= 7) {
+                        $(".uvI").html("UV Index: " + uvindex).css('color', 'green');
+                    }
+                    else if (result.value > 7) {
+                        $(".uvI").html("UV Index: " + uvindex).css('color', 'red');
+                    }
                 });
             }
         });
@@ -42,8 +50,6 @@ $(document).ready(function () {
             method: "Get",
             dataType: "jsonp",
             success: function (data) {
-                var day = "<h2>" + data.city.name + "</h2>";
-                $("#five").append(day);
                 data.list.forEach(function (val, index) {
                     var dt = val.dt_txt;
                     var temp = val.main.temp;
@@ -61,9 +67,6 @@ $(document).ready(function () {
                         `);
                     }
                 });
-
-                // $("#day1").html(day);
-
             }
         });
     });

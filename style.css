@@ -1,5 +1,6 @@
 #head {
     background-color: grey;
+    border-radius: 1em;
     font-size: medium;
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
@@ -19,10 +20,6 @@
         background: #0b7dda;
       }
       
-#history {
-    overflow:scroll;
-    
-}
 #Next {
   font-size: large;
   font-family: 'Times New Roman', Times, serif;
@@ -40,4 +37,34 @@
 .row {
   padding: 1em;
   background-color: grey;
+  border-radius: 1em;
 }
+
+#currentConditions {
+  background-color: grey;
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: inherit;
+  text-align: center;
+  padding: 1rem;
+}
+.uvI {
+  background-color: lightgray;
+  border-radius: 1em;
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: inherit;
+  text-align: center;
+  padding: 1rem;
+}
+.first {
+  border: 2px grey solid;
+  margin: 3px;
+  background-color: rgb(181, 181, 196);
+  border-radius: 1em;
+  padding-left: 2em;
+  margin-right: 2em;
+}
+
