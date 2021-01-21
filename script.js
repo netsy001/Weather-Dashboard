@@ -41,22 +41,31 @@ $(document).ready(function () {
             url: fiveUrl,
             method: "Get",
             dataType: "jsonp",
-            cnt: "5",
             success: function (data) {
-                var newArray = data.slice(0,5);
-                console.log(newArray)
-                fiveDayForcast += "<h2>" + data.city.name + "</h2>"; 
-                for (var i=0; i<data.length;i++)
-                $.each(data.list, function(index, val) {
-                  fiveDayForcast += "<p>" // Opening paragraph tag
-                  fiveDayForcast += "<b>Day " + index + "</b>: " // Day
-                  fiveDayForcast +=  "<b>Temp " + val.main.temp + "</b>: " // Temperature
-                  fiveDayForcast += "<span> | " + val.weather[0].description + "</span>"; // Description
-                  fiveDayForcast += "<img src='https://openweathermap.org/img/w/" + val.weather[0].icon + ".png'>" // Icon
-                  fiveDayForcast += "</p>" // Closing paragraph tag
+                var day = "<h2>" + data.city.name + "</h2>";
+                $("#five").append(day);
+                data.list.forEach(function (val, index) {
+                    var dt = val.dt_txt;
+                    var temp = val.main.temp;
+                    var icon = `<img src= 'https://openweathermap.org/img/w/${val.weather[0].icon}.png'>`;
+                    var humidity = val.main.humidity;
+                    if (val.dt_txt.includes("12:00:00")) {
+                        $("#five").append(`
+                        <div class="col-sm-2 first">
+                            Date: ${dt} <br>
+                            Temperature: ${temp} <br>
+                             ${icon} <br>
+                            Humidity: ${humidity} 
+                            <br>
+                            </div>
+                        `);
+                    }
                 });
-                $("#futureConditions").html(fiveDayForcast);
-              }
+
+                // $("#day1").html(day);
+
+            }
         });
     });
+
 });
