@@ -41,20 +41,21 @@ $(document).ready(function () {
             url: fiveUrl,
             method: "Get",
             dataType: "jsonp",
-            success: function (data, inputValue, d) {
+            cnt: "5",
+            success: function (data) {
                 var fiveDayForcast = "";
-                $.each(function (data,inputValue, d) {
-                    fiveDayForcast = 
-                     '<p><b>' + inputValue + '</b></p>' +
-                     '<img src=http://openweathermap.org/img/w/' + data.weather[0].icon + '.png></p>' +
-                    "<p>Date: " + d + "</p>" +
-                    "<p>Temperature: " + data.main.temp + "</p>" +
-                    "<p>Humidity: " + data.main.humidity + "</p>" +
-                    "<p>Wind speed: " + data.wind.speed + "</p>";
+                console.log(data)
+                fiveDayForcast += "<h2>" + data.city.name + "</h2>"; // City (displays once)
+                $.each(data.list, function(index, val) {
+                  fiveDayForcast += "<p>" // Opening paragraph tag
+                  fiveDayForcast += "<b>Day " + index + "</b>: " // Day
+                  fiveDayForcast += val.main.temp + "&degC" // Temperature
+                  fiveDayForcast += "<span> | " + val.weather[0].description + "</span>"; // Description
+                  fiveDayForcast += "<img src='https://openweathermap.org/img/w/" + val.weather[0].icon + ".png'>" // Icon
+                  fiveDayForcast += "</p>" // Closing paragraph tag
                 });
-                $("#futureConditions").append(fiveDayForcast);
-
-            }
+                $("#futureConditions").html(fiveDayForcast);
+              }
         });
     });
 });
