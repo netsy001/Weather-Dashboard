@@ -20,7 +20,7 @@ The Weather-Dashboard: AS part of the program this assignment is to use a HTML, 
 ## Prerequisites
 To program and write code you need a text editor. Visual Studio Code is the best option to choose.
 
-This assignment project has been delpoyed to Githubpages. To use this project, project link [Link to Github](https://github.com/netsy001/Theworkdayscheduler)
+This assignment project has been delpoyed to Githubpages. To use this project, project link [Link to Github](https://github.com/netsy001/Weather-Dashboard)
 
 ## Installation
 
