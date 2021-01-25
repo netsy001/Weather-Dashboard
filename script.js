@@ -2,7 +2,7 @@ $(document).ready(function () {
     $(".btn").click(function (event) {
         event.preventDefault();
         var inputValue = $("#cityName").val();
-        var urlName = "http://api.openweathermap.org/data/2.5/weather?q=" + inputValue + "&units=imperial" + "&appid=964304f976bc387e7c28396639c2f8d7";
+        var urlName = "https://api.openweathermap.org/data/2.5/weather?q=" + inputValue + "&units=imperial" + "&appid=964304f976bc387e7c28396639c2f8d7";
         $.ajax({
             url: urlName,
             method: "Get",
@@ -12,12 +12,12 @@ $(document).ready(function () {
                 var longitude = response.coord.lon;
                 var currentWeather = show(response, inputValue, d);
                 var iconcode = response.weather[0].icon;
-                var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
                 $("#currentConditions").append(currentWeather);
                 $('#wicon').attr("src", iconurl);
                 var latitude = response.coord.lat;
                 var longitude = response.coord.lon;
-                var uv = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&appid=964304f976bc387e7c28396639c2f8d7";
+                var uv = "https://api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&appid=964304f976bc387e7c28396639c2f8d7";
                 $.ajax({
                     url: uv,
                     method: "Get",
@@ -44,7 +44,7 @@ $(document).ready(function () {
                 "<p>Humidity: " + response.main.humidity + "</p>" +
                 "<p>Wind speed: " + response.wind.speed + "</p>";
         }
-        var fiveUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + inputValue + "&units=imperial" + "&appid=964304f976bc387e7c28396639c2f8d7";
+        var fiveUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + inputValue + "&units=imperial" + "&appid=964304f976bc387e7c28396639c2f8d7";
         $.ajax({
             url: fiveUrl,
             method: "Get",
